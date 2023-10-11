@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:smarthome/splash_screen.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -35,7 +36,6 @@ class HomePage extends StatelessWidget {
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                height: 221,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -55,11 +55,13 @@ class HomePage extends StatelessWidget {
                           children: [
                             Text(
                               "Hello, Hexania",
-                              style: TextStyle(color: Colors.white),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
                             ),
                             Text(
                               "Welcome to your home",
-                              style: TextStyle(color: Colors.white),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 14),
                             )
                           ],
                         ),
@@ -89,6 +91,43 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Container(
+                  height: 103,
+                  child: Card(
+                      color: Color(0xFFF3F4FC),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                              width: 116,
+                              height: 103,
+                              color: Colors.white,
+                              child:
+                                  SvgPicture.asset("assets/svg/Group29.svg")),
+                          Padding(
+                            padding: const EdgeInsets.all(16),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "38,1 KwH",
+                                  style: TextStyle(
+                                      color: Color(0xFF00247A), fontSize: 18),
+                                ),
+                                Text("Power Usage from 20 Devices"),
+                              ],
+                            ),
+                          )
+                        ],
+                      )),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
@@ -241,7 +280,10 @@ class HomePage extends StatelessWidget {
                       child: const Row(
                         children: [
                           Text("View All"),
-                          Icon(Icons.arrow_forward_ios_rounded)
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            size: 14,
+                          )
                         ],
                       ),
                     )
